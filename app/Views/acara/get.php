@@ -57,7 +57,7 @@
                 <td><?=date('d/m/Y', strtotime($value->date_weo))?></td>
                 <td><?=$value->info_weo?></td>
                 <td class="text-center" style="width: 15%">
-                  <a href="" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"></i></a>
+                  <a href="<?=site_url('acara/edit/'.$value->id_weo)?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"></i></a>
                   <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                 </td>
                 </tr>
