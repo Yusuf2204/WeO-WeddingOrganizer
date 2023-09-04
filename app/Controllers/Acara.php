@@ -52,4 +52,10 @@ class Acara extends BaseController
         $this->db->table('weo')->where(['id_weo' => $id])->update($data);
         return redirect()->to(site_url('acara'))->with('success', 'Data Berhasil Disimpan');
     }
+
+    public function destroy($id)
+    {
+        $this->db->table('weo')->where(['id_weo' => $id])->delete();
+        return redirect()->to(site_url('acara'))->with('success', 'Data Berhasil Dihapus');
+    }
 }

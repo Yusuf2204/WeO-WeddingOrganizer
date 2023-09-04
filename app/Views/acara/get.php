@@ -58,7 +58,13 @@
                 <td><?=$value->info_weo?></td>
                 <td class="text-center" style="width: 15%">
                   <a href="<?=site_url('acara/edit/'.$value->id_weo)?>" class="btn btn-warning btn-sm"><i class="fa fa-pencil-alt"></i></a>
-                  <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                  <form action="<?=site_url('acara/'.$value->id_weo)?>" method="post" class="d-inline" onsubmit="return confirm('Yakin Menghapus Data?')">
+                  <?= csrf_field()?>
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button href="" class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  </form>
                 </td>
                 </tr>
                 <?php endforeach; ?>
