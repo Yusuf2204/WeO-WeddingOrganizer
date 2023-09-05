@@ -31,8 +31,20 @@
               <div class="card-header"><h4>Login</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
-                  <div class="form-group">
+
+              <?php if(session()->getFlashdata('error')) : ?>
+                <div class="alert alert-danger alert-dismissible show fade">
+                  <div class="alert-body">
+                    <button class="close" data-dimiss="alert">X</button>
+                    <b>ERROR !</b>
+                    <?=session()->getFlashdata('error')?>
+                  </div>
+                </div>
+              <?php endif;?>
+
+                <form method="POST" action="<?=url_to('Auth::loginProcess')?>" class="needs-validation" novalidate="">
+                <?= csrf_field()?>
+                <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
                     <div class="invalid-feedback">

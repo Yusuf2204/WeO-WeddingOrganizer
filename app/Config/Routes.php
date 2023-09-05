@@ -5,6 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+// $routes->setAutoRoute(true);
+
 $routes->get('create-db', function() {
     $forge = \Config\Database::forge();
     if ($forge->createDatabase('WeO')) 
@@ -25,3 +27,5 @@ $routes->delete('acara/(:segment)', 'Acara::destroy/$1');
 
 $routes->get('login', 'Auth::login');
 // $routes->addRedirect('Auth/login', 'auth/login');
+
+$routes->add('login/loginProcess', 'Auth::loginProcess');

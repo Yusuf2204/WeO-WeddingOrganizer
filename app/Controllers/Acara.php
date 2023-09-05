@@ -37,10 +37,10 @@ class Acara extends BaseController
                 $data['acara'] = $query->getRow();
                 return view('acara/edit', $data);
             } else{
-                throw \CodeIgniter\Exceptions\PageNotFoundException::ForPageNotFound();
+                throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
             }
         } else {
-            throw \CodeIgniter\Exceptions\PageNotFoundException::ForPageNotFound();
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
         }
     }
 
